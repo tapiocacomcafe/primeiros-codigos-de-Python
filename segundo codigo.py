@@ -14,7 +14,7 @@ while True:
   continue
  else: break
 
-#O anoé diferente dos demais. Miha linha de raciocinio é:"Uma pessoa que nasceu após 2022 não conseguiria responder, porque seria muito nova para isso(levando em conta que estou em 2026),
+#O ano é diferente dos demais. Miha linha de raciocinio é:"Uma pessoa que nasceu após 2022 não conseguiria responder, porque seria muito nova para isso(levando em conta que estou em 2026),
 #enquanto uma pessoa que nasceu em 1902 tem 124 anos, oque é quase impossivel levando em conta que a pessoa mais velha do mundo tinha 122 anos " 
 while True:
  ano = int(input('ano: '))
@@ -26,4 +26,5 @@ while True:
 
         
 print('você nasceu em:',dia,'/',mês,'/',ano,'certo?')
+
 
