@@ -7,3 +7,4 @@ b = int( input('escolha um numero: '))
 c = a + b
 
 print('o resultado é:', c)
+
