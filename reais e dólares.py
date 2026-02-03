@@ -1,0 +1,59 @@
+#aviso:
+print("\nLembrete: valores simulados! IOF e cotação variam — consulte fontes oficiais no dia real.")
+
+#começando pela importação da biblioteca "time" e definindo a variavel "taxa":
+import time
+taxa = 0.035
+
+#Pede para o usuario definir o seu saldo e o valor do dolar atualmente. Caso o saldo do usuario for menor...
+#que o dolar o programa mostra na tela uma mensagem de erro:
+while True:
+    try:
+        saldo_reais = float(input('digite seu saldo em reais: '))
+        dolar = float(input('digite a valor atual do dolar: '))
+    except ValueError:
+        print('digite um valor valido')
+        continue
+
+    if saldo_reais < dolar:
+        print('saldo insuficiente')
+        continue
+    else:
+        break
+
+#O programa pergunta ao usuario se a compra do dolar será em especie ou em cartão:
+forma_de_pagamento = input('Sua compra será em especie ou cartão? ')
+
+#Caso "especie" seja escolhido ele irá para o processo de pagamento:
+if forma_de_pagamento.lower() == 'especie':
+    valor_liquido = saldo_reais / (1 + taxa)
+    dolares = valor_liquido / dolar
+    print('Você escolheu comprar em espécie.\nSerá aplicado uma taxa de 3,5% em sua transação')
+
+    print('Carregando a transação', end=' ')
+    for i in range(3):
+     time.sleep(1.0)
+     print('.', end='')
+    print('\nTransação bem sucedida!')
+    for i in range(2):
+     time.sleep(0.5)
+     print('', end='')
+#Ao terminar o processo de pagamento ele exibe quantos dolares o usuario recebeu:
+    print('O seu saldo em dolar agora é:{:.2f}'.format(dolares))
+
+#Caso o usuario tenha escolhido "cartão" o processo de pagamento e finalização são os mesmo do "especie":
+elif forma_de_pagamento.lower() == 'cartão':
+    valor_liquido = saldo_reais / (1 + taxa)
+    dolares = valor_liquido / dolar
+
+    print('Você escolheu comprar em cartão.\nSerá aplicado uma taxa de 3.5% em sua transação')
+
+    print('Carregando a transação', end=' ')
+    for i in range(3):
+        time.sleep(1.0)
+        print('.', end='')
+    print('\nTransação bem sucedida!')
+    for i in range(2):
+        time.sleep(0.5)
+        print('', end='')
+    print('O seu saldo em dolar agora é:{:.2f}'.format(dolares))
